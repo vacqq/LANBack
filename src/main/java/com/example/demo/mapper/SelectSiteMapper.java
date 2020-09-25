@@ -119,7 +119,7 @@ public interface SelectSiteMapper {
      * @author lcz
      * @date 2020/5/6 14:39
      */
-    @Select({"select code ,name from tbl_dictionaries where type = #{type}"})
+    @Select({"select value ,name from lan_dictionaries where type = #{type}"})
     List<HashMap> SelectDictionariesByType(@Param("type") String type);
 
     /**
