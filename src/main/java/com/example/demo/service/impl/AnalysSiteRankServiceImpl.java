@@ -13,12 +13,14 @@ public class AnalysSiteRankServiceImpl implements AnalysSiteRankService {
     @Autowired
     AnalysSiteRankMapper analysSiteRankMapper;
 
+    @Override
     public List<HashMap> Select(HashMap<String, String> jsonString) {
         return analysSiteRankMapper.Select(jsonString.get("type"), jsonString.get("order_type"), jsonString.get("site_type"));
     }
 
+    @Override
     public List<HashMap> SelectData(HashMap<String, String> jsonString) {
-        return analysSiteRankMapper.SelectData(jsonString.get("type"), jsonString.get("order_type"), jsonString.get("site_type"), jsonString.get("decimal_num"), jsonString.get("start_time"), jsonString.get("end_time"), jsonString.get("place_id"));
+        return analysSiteRankMapper.SelectData(jsonString.get("start_time"), jsonString.get("end_time"));
     }
 
 }

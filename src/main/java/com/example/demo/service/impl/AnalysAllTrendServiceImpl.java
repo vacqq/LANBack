@@ -14,6 +14,7 @@ public class AnalysAllTrendServiceImpl implements AnalysAllTrendService {
     @Autowired
     AnalysAllTrendMapper analysAllTrendMapper;
 
+    @Override
     public List<HashMap> Select(HashMap<String, String> jsonString, int site_id) {
         return analysAllTrendMapper.Select(jsonString.get("type"), jsonString.get("weather_type"), jsonString.get("site_type"), site_id, jsonString.get("start_time"), jsonString.get("end_time"), jsonString.get("place_id"));
     }
